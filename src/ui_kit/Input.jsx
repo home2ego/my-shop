@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import './Input.css';
 
 function Input(props) {
   const { placeholder, type = 'text', className, required, ...rest } = props;
