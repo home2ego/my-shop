@@ -13,7 +13,7 @@ function Home() {
           Start shopping
         </Link>
       </div>
-      <img src="/home.jpg" width="350" height="240" className="rounded" alt="" />
+      <img src="/home.webp" width="350" height="240" className="rounded" alt="" />
     </div>
   );
 }

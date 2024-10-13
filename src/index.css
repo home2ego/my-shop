@@ -112,6 +112,7 @@ a {
   padding-bottom: 40px;
 }
 
+/* checked */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr auto;
