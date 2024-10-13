@@ -377,7 +377,6 @@ input:focus {
   background-color: var(--neutral);
   padding: 10px;
   border-radius: 20px;
-  cursor: pointer;
   transition: transform 180ms ease-out;
 }
 .product-image:nth-child(2n):hover {
