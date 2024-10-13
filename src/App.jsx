@@ -1,9 +1,9 @@
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Products from './components/Products';
-import Cart from './components/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Home from './components/Home.jsx';
+import About from './components/About.jsx';
+import Products from './components/Products.jsx';
+import Cart from './components/Cart.jsx';
 
 function App() {
   return (
