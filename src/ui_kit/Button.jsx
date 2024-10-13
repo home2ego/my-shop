@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import './Button.css';
 
 function Button(props) {
   const { children, outline, className, ...rest } = props;
