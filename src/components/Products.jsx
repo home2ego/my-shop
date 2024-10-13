@@ -8,7 +8,8 @@ function Products() {
   return (
     <div className="products-layout">
       <h1>Products</h1>
-      {error ? <p>Could not load products...</p> : <p>Take a look at our products</p>}
+      {!isLoading && !error ? <p>Take a look at our products</p> : null}
+      {error && <p>Could not load products...</p>}
 
       <div className="products-grid">
         {isLoading && <Loader />}
@@ -17,6 +18,8 @@ function Products() {
             return <Product key={product.id} details={product} />;
           })}
       </div>
+
+      {!isLoading && !error ? <small>* click on image for more details</small> : null}
     </div>
   );
 }
