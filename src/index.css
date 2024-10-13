@@ -122,7 +122,8 @@ a {
 }
 
 /* checked */
-.products-layout {
+.products-layout,
+.cart-layout {
   padding-top: 40px;
   padding-bottom: 40px;
 }
