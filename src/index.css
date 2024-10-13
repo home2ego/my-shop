@@ -7,34 +7,12 @@
 
   --white: #fff;
   --black: #000;
-
-  /* Primary colors*/
   --primary: #213547;
-
-  /* --primary-1: #0f766e;
-  --primary-2: #14b8a6;
-  --primary-3: #2dd4bf;
-  --primary-4: #5eead4;
-  --primary-5: #99f6e4; */
-
-  /* Neutral colors */
   --neutral: #fafafa;
-
-  /* --neutral-1: #2c2c2c;
-  --neutral-2: #434343;
-  --neutral-3: #94868b;
-  --neutral-4: #d9cfd3; */
-
-  /* Accent-blue colors */
   --accent: #4f46e5;
-
-  --accent-2: #6366f1;
-  --accent-3: #de7699;
-  --accent-4: #e6c3ce;
-  --accent-5: #fff2f7;
 }
 
-/* #region Main */
+/* #region Base */
 body {
   background-color: var(--neutral);
   margin: 0;
@@ -74,7 +52,7 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-/* #endregion Main */
+/* #endregion Base */
 
 /* NAVBAR */
 /* #region Navbar */
@@ -121,6 +99,42 @@ a {
 }
 /* #endregion Navbar */
 
+/* Pages */
+/* #region Pages */
+
+/* checked */
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  place-items: center;
+  grid-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.products-layout {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.product-details-layout {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 40px;
+}
+
+/* #endregion Pages */
+
 /* BUTTONS */
 .btn {
   border-radius: 3px;
@@ -132,6 +146,7 @@ a {
   transition: scale 200ms;
 }
 
+/* #region .btn-accent */
 .btn-accent {
   color: var(--white);
   background-color: var(--accent);
@@ -150,11 +165,11 @@ a {
   scale: 1;
 }
 
-/* --- */
+/* #endregion .btn-accent */
 
 .btn-default {
   color: var(--white);
-  background-color: var(--primary-1);
+  background-color: var(--accent-2);
 }
 
 .btn-default:hover,
@@ -262,37 +277,6 @@ input:focus {
 }
 .tabs .tab-active {
   border-bottom: 7px solid var(--primary-1);
-}
-
-/* Pages */
-.home-layout {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  place-items: center;
-  grid-gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.products-layout {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.product-details-layout {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 40px;
 }
 
 /* Products */

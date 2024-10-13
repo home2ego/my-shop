@@ -23,7 +23,7 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/cart" disabled={true} className="nav-item nav-cart btn btn-accent">
+          <NavLink to="/cart" className="nav-item nav-cart btn btn-accent">
             Cart (0)
           </NavLink>
         </li>
