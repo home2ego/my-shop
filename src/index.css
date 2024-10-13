@@ -10,6 +10,9 @@
   --primary: #213547;
   --neutral: #fafafa;
   --accent: #4f46e5;
+  --accent-2: #a5b4fc;
+  --accent-3: #e11d48;
+  --accent-4: #fecdd3;
 }
 
 /* #region Base */
@@ -139,6 +142,7 @@ a {
 /* #endregion Pages */
 
 /* BUTTONS */
+/* #region Button */
 .btn {
   border-radius: 3px;
   display: inline-block;
@@ -146,10 +150,9 @@ a {
   font-size: 14px;
   font-weight: 600;
   padding: 13px 40px;
-  transition: scale 200ms;
+  transition: scale 200ms, translate 200ms;
 }
 
-/* #region .btn-accent */
 .btn-accent {
   color: var(--white);
   background-color: var(--accent);
@@ -165,44 +168,51 @@ a {
   cursor: default;
 }
 .btn-accent[disabled]:hover {
-  scale: 1;
+  scale: initial;
 }
 
-/* #endregion .btn-accent */
-
 .btn-default {
-  color: var(--white);
+  color: var(--black);
   background-color: var(--accent-2);
 }
 
-.btn-default:hover,
-.btn-outline:hover {
-  color: var(--white);
-  background-color: var(--primary-2);
-  text-decoration: none;
-}
-
-.btn-default:active,
-.btn-outline:active {
-  color: var(--primary-1);
-  background-color: var(--primary-4);
-}
-
-.btn-default[disabled],
-.btn-outline[disabled] {
-  color: var(--primary-4);
-  background-color: var(--primary-5);
-  cursor: default;
-}
-
 .btn-outline {
-  color: var(--primary-1);
-  background-color: var(--primary-4);
-  border: var(--primary-1) 2px solid;
+  color: var(--black);
+  background-color: var(--accent-2);
+  border: var(--accent) 2px solid;
+
   box-shadow: 1px 1px 7px #c4c4c4;
   padding: 8px 25px;
   border-radius: 10px;
 }
+
+.btn-default:hover,
+.btn-outline:hover {
+  scale: 0.97;
+}
+
+.btn-default:active,
+.btn-outline:active {
+  translate: 1.5px 1.5px;
+}
+
+.btn-default[disabled],
+.btn-outline[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btn-default[disabled]:hover,
+.btn-outline[disabled]:hover {
+  scale: initial;
+}
+
+.btn-default[disabled]:active,
+.btn-outline[disabled]:active {
+  translate: initial;
+}
+
+/* #endregion Button */
 
 /* FORMS */
 .form h2 {
@@ -283,12 +293,16 @@ input:focus {
 }
 
 /* Products */
+
+/* #region Products */
+/* checked */
 .products-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
 }
 
+/* checked */
 .product {
   background-color: var(--white);
   padding: 15px 20px;
@@ -297,28 +311,33 @@ input:focus {
   grid-template-columns: auto 1fr auto;
 }
 
+/* checked */
 .product-info {
   padding-left: 25px;
 }
 
+/* checked */
 .product-checkout {
   display: grid;
   grid-template-rows: 1fr auto;
   justify-items: end;
 }
 
+/* checked */
 .product-delete {
-  background-color: var(--white);
+  color: var(--black);
+  background-color: var(--accent-4);
   padding: 5px 10px;
-  color: var(--accent-1);
-  border-color: var(--accent-2);
-  font-size: 14px;
+  border: 2px solid var(--accent-3);
+  font-size: 16px;
 }
 
+/* checked */
 .product-image-container {
   position: relative;
 }
 
+/* checked */
 .product-quantity-container {
   position: absolute;
   top: 8px;
@@ -328,19 +347,22 @@ input:focus {
   padding: 5px;
 }
 
+/* checked */
 .product-quantity {
-  background-color: var(--primary-1);
+  background-color: var(--accent);
   color: var(--white);
   border-radius: 50%;
   font-size: 14px;
+  font-weight: 600;
   width: 23px;
   height: 23px;
   display: grid;
   place-items: center;
 }
 
+/* checked */
 .product-image {
-  background-color: var(--neutral-5);
+  background-color: var(--neutral);
   padding: 10px;
   border-radius: 20px;
   transition: transform 180ms ease-out;
@@ -352,10 +374,13 @@ input:focus {
   transform: scale(1.01) rotateZ(-2deg);
 }
 
+/* checked */
 .product h3,
 .product p {
   margin: 0;
 }
+
+/* #endregion Products */
 
 /* product details page */
 .product-details-image {
@@ -435,56 +460,5 @@ input:focus {
   }
   .home-image {
     order: -1;
-  }
-}
-
-/* Loader */
-.spinner {
-  animation: rotator 1.4s linear infinite;
-}
-
-@keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
-}
-.path {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-}
-
-@keyframes colors {
-  0% {
-    stroke: #4285f4;
-  }
-  25% {
-    stroke: #de3e35;
-  }
-  50% {
-    stroke: #f7c223;
-  }
-  75% {
-    stroke: #1b9a59;
-  }
-  100% {
-    stroke: #4285f4;
-  }
-}
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    transform: rotate(450deg);
   }
 }

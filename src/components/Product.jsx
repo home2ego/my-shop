@@ -1,7 +1,7 @@
 import Button from '../ui_kit/Button.jsx';
 
-function Product(props) {
-  const { image, name, description, price } = props.product;
+function Product({ details }) {
+  const { image, name, description, price } = details;
 
   return (
     <div className="product">
