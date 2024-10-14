@@ -46,6 +46,11 @@ a {
   font-size: 18px;
 }
 
+button,
+input {
+  font: inherit;
+}
+
 .rounded {
   border-radius: 30px;
 }
@@ -404,6 +409,7 @@ a {
 
 ::placeholder {
   color: var(--neutral-2);
+  font-size: 14px;
 }
 
 input:focus {
