@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import Button from '../../ui_kit/Button.jsx';
 
-function ProductDetailsInfo() {
+function ProductDetailsInfo({ onProductAdd }) {
   const product = useOutletContext();
   const { description, price } = product;
 
@@ -10,7 +10,7 @@ function ProductDetailsInfo() {
       <p>
         {description} sold at <strong>${price}</strong> per piece.
       </p>
-      <Button>${price}</Button>
+      <Button onClick={() => onProductAdd(product)}>${price}</Button>
     </>
   );
 }

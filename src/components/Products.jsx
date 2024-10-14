@@ -2,8 +2,9 @@ import useSWR from 'swr';
 import Product from './Product.jsx';
 import Loader from './Loader.jsx';
 
-function Products() {
+function Products(props) {
   const { data: products = [], error, isLoading } = useSWR('supermarket.json');
+  const { cart, onProductAdd, onProductDelete } = props;
 
   return (
     <div className="products-layout">
@@ -15,7 +16,15 @@ function Products() {
         {isLoading && <Loader />}
         {products &&
           products.map((product) => {
-            return <Product key={product.id} details={product} />;
+            return (
+              <Product
+                key={product.id}
+                details={product}
+                cart={cart}
+                onProductAdd={onProductAdd}
+                onProductDelete={onProductDelete}
+              />
+            );
           })}
       </div>
 

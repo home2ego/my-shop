@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import Button from '../ui_kit/Button.jsx';
 
-function Product({ details }) {
+function Product(props) {
+  const { onProductDelete, onProductAdd, details } = props;
   const { image, name, description, price, id } = details;
 
   return (
@@ -20,11 +21,13 @@ function Product({ details }) {
       </div>
       <div className="product-checkout">
         <div>
-          <Button outline className="product-delete">
+          <Button outline onClick={() => onProductDelete(id)} className="product-delete">
             x
           </Button>
         </div>
-        <Button outline>${price}</Button>
+        <Button outline onClick={() => onProductAdd(details)}>
+          ${price}
+        </Button>
       </div>
     </div>
   );
