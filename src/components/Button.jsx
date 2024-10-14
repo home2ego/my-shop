@@ -6,7 +6,7 @@ function Button(props) {
   const classNames = clsx(
     {
       btn: true,
-      'btn-default': !outline,
+      'btn-accent': !outline,
       'btn-outline': outline,
     },
     className

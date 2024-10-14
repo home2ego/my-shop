@@ -149,6 +149,7 @@ a {
   font-size: 14px;
   font-weight: 600;
   padding: 13px 39px;
+  border: 0;
   transition: scale 200ms, translate 200ms;
 }
 
@@ -376,32 +377,17 @@ a {
 /* #endregion Products details page */
 
 /* #region FORM */
-.form h2 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.form h3 {
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-
-.form-section {
-  border-bottom: var(--neutral-4) solid 1px;
-  margin-bottom: 20px;
-}
-
 .input-required {
-  color: var(--primary-2);
+  color: var(--accent-3);
   text-decoration: none;
-  font-weight: bold;
-  padding: 0 1px;
+  padding: 0 2px;
 }
 
 .label {
   display: block;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 700;
+  width: max-content;
 }
 
 .input {
@@ -411,22 +397,27 @@ a {
   padding: 0.75em 0.5em;
   min-width: 200px;
   border: none;
-  border-left: 7px solid var(--neutral-4);
+  border-left: 5px solid var(--neutral-2);
   transition: border-left-color 160ms;
   background-color: white;
 }
 
 ::placeholder {
-  color: var(--neutral-4);
+  color: var(--neutral-2);
 }
 
 input:focus {
   outline: none;
-  border-left: 7px solid var(--primary-1);
+  border-left-color: var(--primary);
 }
 
 .pay-form {
   padding-top: 30px;
+}
+
+.pay-form p {
+  margin-bottom: 36px;
+  font-size: 16px;
 }
 /* #endregion FORM */
 
