@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Home from './components/Home.jsx';
@@ -11,9 +11,15 @@ import ProductDetailsStorage from './components/product-details/ProductDetailsSt
 import Cart from './components/Cart.jsx';
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem('cart')) ?? []);
 
-  function handleProductAdd(newProduct) {
+  useEffect(() => {
+    if (cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }, [cart]);
+
+  const handleProductAdd = (newProduct) => {
     // check if item exists
     const existingProduct = cart.find((product) => product.id === newProduct.id);
 
@@ -40,12 +46,12 @@ function App() {
         },
       ]);
     }
-  }
+  };
 
-  function handleProductDelete(id) {
+  const handleProductDelete = (id) => {
     const updatedCart = cart.filter((product) => product.id !== id);
     setCart(updatedCart);
-  }
+  };
 
   return (
     <BrowserRouter>
