@@ -25,7 +25,7 @@ function Navbar({ cart }) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/cart" className="nav-item nav-cart btn btn-accent">
+          <NavLink to="/cart" className="btn btn-accent">
             Cart ({cartCount})
           </NavLink>
         </li>

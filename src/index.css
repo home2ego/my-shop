@@ -97,10 +97,6 @@ a {
 .nav-item a.active {
   text-decoration: underline;
 }
-
-.nav-cart {
-  padding: 10px 25px;
-}
 /* #endregion Navbar */
 
 /* Pages */
@@ -187,11 +183,6 @@ a {
   scale: initial;
 }
 
-.btn-default {
-  color: var(--black);
-  background-color: var(--accent-2);
-}
-
 .btn-outline {
   color: var(--black);
   background-color: var(--accent-2);
@@ -202,28 +193,23 @@ a {
   border-radius: 10px;
 }
 
-.btn-default:hover,
 .btn-outline:hover {
   scale: 0.97;
 }
 
-.btn-default:active,
 .btn-outline:active {
   translate: 1.5px 1.5px;
 }
 
-.btn-default[disabled],
 .btn-outline[disabled] {
   opacity: 0.5;
   cursor: default;
 }
 
-.btn-default[disabled]:hover,
 .btn-outline[disabled]:hover {
   scale: initial;
 }
 
-.btn-default[disabled]:active,
 .btn-outline[disabled]:active {
   translate: initial;
 }
@@ -457,10 +443,9 @@ input:focus {
   background-color: var(--neutral);
 }
 
-/* #endregion Products details page */
-
+/* checked */
 .table.table-cart thead {
-  background-color: var(--accent-1);
+  background-color: var(--primary);
 }
 .table-cart {
   text-align: center;
@@ -472,15 +457,19 @@ input:focus {
   padding-left: 20px;
 }
 
+/* checked */
 .th-product {
   text-align: left;
   padding-left: 25px;
 }
 
+/* checked */
 .cart-highlight {
-  background-color: var(--accent-1);
+  background-color: var(--primary);
   color: var(--white);
 }
+
+/* #endregion Products details page */
 
 .pay-form {
   padding-top: 30px;

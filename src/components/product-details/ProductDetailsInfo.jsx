@@ -10,7 +10,9 @@ function ProductDetailsInfo({ onProductAdd }) {
       <p>
         {description} sold at <strong>${price}</strong> per piece.
       </p>
-      <Button onClick={() => onProductAdd(product)}>${price}</Button>
+      <Button outline onClick={() => onProductAdd(product)}>
+        ${price}
+      </Button>
     </>
   );
 }
