@@ -1,5 +1,13 @@
+import { useOutletContext } from 'react-router-dom';
+
 function ProductDetailsStorage() {
-  return <>Product detail storage</>;
+  const storage = useOutletContext().storage;
+
+  return (
+    <p>
+      <strong>Storage instructions:</strong> {storage}
+    </p>
+  );
 }
 
 export default ProductDetailsStorage;
