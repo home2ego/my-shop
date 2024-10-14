@@ -407,6 +407,7 @@ input:focus {
 /* #endregion Products */
 
 /* product details page */
+/* #region Products details page */
 /* checked */
 .product-details-image {
   background-color: var(--white);
@@ -414,32 +415,53 @@ input:focus {
   border-radius: 20px;
 }
 
+/* checked */
 .table {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* checked */
 .table thead {
-  background-color: var(--primary-1);
+  background-color: var(--primary);
   color: var(--white);
   border: 1px solid var(--white);
   border-top: 0;
 }
-.table.table-cart thead {
-  background-color: var(--accent-1);
-}
+
+/* checked */
 .table th {
   padding: 15px;
 }
+/* checked */
 .table td {
   padding: 10px;
 }
 
+/* checked */
 .table tbody {
-  font-size: 18px;
+  font-size: initial;
   border: 1px solid var(--white);
 }
 
+/* checked */
+.table-nutrition tbody td:last-child {
+  text-align: center;
+}
+/* checked */
+.table tbody tr:nth-child(2n) {
+  background-color: var(--white);
+}
+/* checked */
+.table tbody tr:nth-child(2n + 1) {
+  background-color: var(--neutral);
+}
+
+/* #endregion Products details page */
+
+.table.table-cart thead {
+  background-color: var(--accent-1);
+}
 .table-cart {
   text-align: center;
 }
@@ -448,18 +470,6 @@ input:focus {
   align-items: center;
   gap: 15px;
   padding-left: 20px;
-}
-
-.table-nutrition tbody td:last-child {
-  text-align: center;
-}
-
-.table tbody tr:nth-child(2n) {
-  background-color: var(--white);
-}
-
-.table tbody tr:nth-child(2n + 1) {
-  background-color: var(--neutral-5);
 }
 
 .th-product {
