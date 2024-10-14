@@ -161,13 +161,14 @@ a {
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  padding: 13px 40px;
+  padding: 13px 39px;
   transition: scale 200ms, translate 200ms;
 }
 
 .btn-accent {
   color: var(--white);
   background-color: var(--accent);
+  min-width: 140px;
 }
 .btn-accent:hover {
   scale: 0.97;
@@ -189,7 +190,7 @@ a {
   border: var(--accent) 2px solid;
 
   box-shadow: 1px 1px 7px #c4c4c4;
-  padding: 8px 25px;
+  padding: 8px 24px;
   border-radius: 10px;
 }
 
