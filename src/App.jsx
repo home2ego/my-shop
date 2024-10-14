@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Home from './components/Home.jsx';
@@ -12,12 +12,6 @@ import Cart from './components/Cart.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    // to visualize the cart in the console every time in changes
-    // TEMPORARILY
-    console.log(cart);
-  }, [cart]);
 
   function handleProductAdd(newProduct) {
     // check if item exists
