@@ -131,10 +131,12 @@ a {
   padding-bottom: 40px;
 }
 
+/* checked */
 .products-layout {
   position: relative;
 }
 
+/* checked */
 .products-layout small {
   position: absolute;
   bottom: 0;
@@ -143,6 +145,7 @@ a {
   font-weight: 600;
 }
 
+/* checked */
 .product-details-layout {
   padding-top: 40px;
   padding-bottom: 40px;

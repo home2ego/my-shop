@@ -14,51 +14,25 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="container">
-              <Home />
-            </div>
-          }
-        ></Route>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
 
-        <Route
-          path="/about"
-          element={
-            <div className="container">
-              <About />
-            </div>
-          }
-        ></Route>
+          <Route path="/about" element={<About />}></Route>
 
-        <Route
-          path="/products"
-          element={
-            <div className="container">
-              <Products />
-            </div>
-          }
-        ></Route>
+          <Route path="/products" element={<Products />}></Route>
 
-        <Route path="/products/:id" element={<ProductDetails />}>
-          <Route path="" element={<ProductDetailsInfo />}></Route>
+          <Route path="/products/:id" element={<ProductDetails />}>
+            <Route path="" element={<ProductDetailsInfo />}></Route>
 
-          <Route path="nutrition" element={<ProductDetailsNutrition />}></Route>
+            <Route path="nutrition" element={<ProductDetailsNutrition />}></Route>
 
-          <Route path="storage" element={<ProductDetailsStorage />}></Route>
-        </Route>
+            <Route path="storage" element={<ProductDetailsStorage />}></Route>
+          </Route>
 
-        <Route
-          path="/cart"
-          element={
-            <div className="container">
-              <Cart />
-            </div>
-          }
-        ></Route>
-      </Routes>
+          <Route path="/cart" element={<Cart />}></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
