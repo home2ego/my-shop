@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Button from '../ui_kit/Button.jsx';
+import Button from './Button.jsx';
 
 function Product(props) {
   const { onProductDelete, onProductAdd, cart, details } = props;
