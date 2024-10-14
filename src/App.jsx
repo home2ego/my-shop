@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Home from './components/Home.jsx';
@@ -13,12 +13,44 @@ import Cart from './components/Cart.jsx';
 function App() {
   const [cart, setCart] = useState([]);
 
-  function handleProductDelete(id) {
-    console.log('Deleting product ' + id);
-  }
+  useEffect(() => {
+    // to visualize the cart in the console every time in changes
+    // TEMPORARILY
+    console.log(cart);
+  }, [cart]);
 
   function handleProductAdd(newProduct) {
-    console.log('Adding product ' + newProduct.id);
+    // check if item exists
+    const existingProduct = cart.find((product) => product.id === newProduct.id);
+
+    if (existingProduct) {
+      // increase quantity
+      const updatedCart = cart.map((product) => {
+        if (product.id === newProduct.id) {
+          return {
+            ...product,
+            quantity: product.quantity + 1,
+          };
+        }
+        return product;
+      });
+
+      setCart(updatedCart);
+    } else {
+      // product is new to the cart
+      setCart([
+        ...cart,
+        {
+          ...newProduct,
+          quantity: 1,
+        },
+      ]);
+    }
+  }
+
+  function handleProductDelete(id) {
+    const updatedCart = cart.filter((product) => product.id !== id);
+    setCart(updatedCart);
   }
 
   return (
