@@ -13,7 +13,13 @@ function Home() {
           Start shopping
         </Link>
       </div>
-      <img src="/home.webp" width="350" height="240" className="rounded" alt="" />
+      <img
+        src="https://res.cloudinary.com/deoo8jl7p/image/upload/f_auto,q_auto,w_700/v1729229817/home_qrbfkg.jpg"
+        width="350"
+        height="240"
+        className="rounded"
+        alt=""
+      />
     </div>
   );
 }

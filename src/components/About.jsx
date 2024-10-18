@@ -10,7 +10,13 @@ function About() {
           <em>We use Stripe to process your payment.</em>
         </p>
       </div>
-      <img src="/about.webp" height="275" width="183" className="rounded" alt="" />
+      <img
+        src="https://res.cloudinary.com/deoo8jl7p/image/upload/f_auto,q_auto,w_550/v1729229826/about_i03iy5.jpg"
+        height="275"
+        width="183"
+        className="rounded"
+        alt=""
+      />
     </div>
   );
 }
