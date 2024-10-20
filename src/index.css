@@ -246,6 +246,11 @@ input {
   grid-gap: 25px;
 }
 
+.products-error {
+  color: var(--accent-3);
+  font-weight: 700;
+}
+
 .product {
   background-color: var(--white);
   padding: 15px 20px;

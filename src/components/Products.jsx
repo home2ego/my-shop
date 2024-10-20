@@ -2,18 +2,17 @@ import useSWR from 'swr';
 import Product from './Product.jsx';
 import Loader from './Loader.jsx';
 
-function Products(props) {
+function Products({ cart, onProductAdd, onProductDelete }) {
   const { data: products = [], error, isLoading } = useSWR('supermarket.json');
-  const { cart, onProductAdd, onProductDelete } = props;
 
   return (
     <div className="products-layout">
       <h1>Products</h1>
-      {!isLoading && !error ? <p>Take a look at our products</p> : null}
-      {error && <p>Could not load products...</p>}
+      <p>Take a look at our products</p>
 
       <div className="products-grid">
         {isLoading && <Loader />}
+        {error && <p className="products-error">Could not load products... Please try again later.</p>}
         {products &&
           products.map((product) => {
             return (
