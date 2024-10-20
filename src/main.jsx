@@ -6,9 +6,7 @@ import './index.css';
 
 const baseUrl = 'https://react-tutorial-demo.firebaseio.com/';
 
-function fetcher(url) {
-  return fetch(baseUrl + url).then((response) => response.json());
-}
+const fetcher = (url) => fetch(baseUrl + url).then((response) => response.json());
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
