@@ -9,11 +9,14 @@ import ProductDetailsNutrition from './components/product-details/ProductDetails
 import ProductDetailsStorage from './components/product-details/ProductDetailsStorage.jsx';
 import Cart from './components/Cart.jsx';
 import { AppProvider } from './components/AppContext.jsx';
+import Button from './components/Button.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <Button className="btn-toggle" />
+
         <Navbar />
 
         <div className="container">

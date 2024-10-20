@@ -31,7 +31,7 @@ function Product(props) {
       <div className="product-checkout">
         <div>
           {quantity > 0 && (
-            <Button outline onClick={() => app.onProductDelete(id)} className="product-delete">
+            <Button onClick={() => app.onProductDelete(id)} className="btn-delete">
               x
             </Button>
           )}

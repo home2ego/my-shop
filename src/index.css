@@ -17,8 +17,12 @@
 }
 
 body {
+  position: relative;
+
   background-color: var(--neutral);
   margin: 0;
+
+  height: 100vh;
 }
 
 h1 {
@@ -148,33 +152,28 @@ input {
 
 /* #region BUTTONS */
 .btn {
-  border-radius: 3px;
   display: inline-block;
   cursor: pointer;
-  font-size: 14px;
   font-weight: 600;
-  padding: 13px 39px;
-  border: 0;
-  transition: scale 200ms, translate 200ms;
 }
 
 .btn-accent {
   color: var(--white);
   background-color: var(--accent);
   min-width: 140px;
+
+  padding: 13px 39px;
+  border-radius: 5px;
+
+  font-size: 14px;
+
+  transition: scale 200ms, opacity 200ms;
 }
 .btn-accent:hover {
   scale: 0.97;
 }
 .btn-accent:active {
   opacity: 0.9;
-}
-.btn-accent[disabled] {
-  opacity: 0.85;
-  cursor: default;
-}
-.btn-accent[disabled]:hover {
-  scale: initial;
 }
 
 .btn-outline {
@@ -185,27 +184,57 @@ input {
   box-shadow: 1px 1px 7px #c4c4c4;
   padding: 8px 24px;
   border-radius: 10px;
+
+  font-size: 14px;
+
+  transition: scale 200ms, translate 200ms;
 }
 
-.btn-outline:hover {
+.btn-delete {
+  color: var(--black);
+  background-color: var(--accent-4);
+  border: 2px solid var(--accent-3);
+
+  box-shadow: 1px 1px 7px #c4c4c4;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  transition: scale 200ms, translate 200ms;
+}
+
+.btn-toggle {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  width: 54px;
+  height: 54px;
+
+  padding: 4px;
+  border-radius: 50%;
+
+  background-color: var(--white);
+  border: var(--primary) 2px solid;
+  box-shadow: 1px 1px 7px #c4c4c4;
+
+  background-image: url(./assets/moon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: scale 200ms, translate 200ms;
+}
+
+.btn-outline:hover,
+.btn-delete:hover,
+.btn-toggle:hover {
   scale: 0.97;
 }
-
-.btn-outline:active {
+.btn-outline:active,
+.btn-delete:active,
+.btn-toggle:active {
   translate: 1.5px 1.5px;
-}
-
-.btn-outline[disabled] {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.btn-outline[disabled]:hover {
-  scale: initial;
-}
-
-.btn-outline[disabled]:active {
-  translate: initial;
 }
 /* #endregion Button */
 
@@ -267,14 +296,6 @@ input {
   display: grid;
   grid-template-rows: 1fr auto;
   justify-items: end;
-}
-
-.product-delete {
-  color: var(--black);
-  background-color: var(--accent-4);
-  padding: 5px 10px;
-  border: 2px solid var(--accent-3);
-  font-size: 16px;
 }
 
 .product-image-container {
