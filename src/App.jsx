@@ -37,7 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppProvider>
-        <Button className="btn-toggle" onClick={handleThemeClick} />
+        <Button className="btn-toggle" onClick={handleThemeClick} aria-label="Toggle theme" />
 
         <Navbar />
 

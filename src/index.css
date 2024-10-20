@@ -221,25 +221,28 @@ input {
 }
 
 .btn-toggle {
-  position: absolute;
-  bottom: 30px;
+  position: fixed;
+  bottom: 15px;
   right: 30px;
 
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
 
   padding: 4px;
   border-radius: 50%;
 
-  background-color: var(--surface-color);
-  border: var(--primary) 2px solid;
-  box-shadow: 1px 1px 7px var(--surface-shadow);
+  background-color: var(--primary);
+  border: var(--neutral-2) 2px solid;
 
   background-image: url(./assets/moon.svg);
   background-repeat: no-repeat;
   background-position: center;
 
-  transition: scale 200ms, translate 200ms;
+  transition: scale 200ms, translate 200ms, background-image 25ms;
+}
+
+.dark .btn-toggle {
+  background-image: url(./assets/sun.svg);
 }
 
 .btn-outline:hover,
