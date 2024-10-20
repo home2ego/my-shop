@@ -63,7 +63,9 @@ function Cart() {
                 type="email"
                 required
               />
-              <Button type="submit">Pay</Button>
+              <Button type="submit" className="btn-accent">
+                Pay
+              </Button>
             </form>
           </>
         )}

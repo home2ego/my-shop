@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Home from './components/Home.jsx';
@@ -12,10 +13,31 @@ import { AppProvider } from './components/AppContext.jsx';
 import Button from './components/Button.jsx';
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      setIsDarkTheme(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [isDarkTheme]);
+
+  function handleThemeClick() {
+    setIsDarkTheme(!isDarkTheme);
+  }
+
   return (
     <BrowserRouter>
       <AppProvider>
-        <Button className="btn-toggle" />
+        <Button className="btn-toggle" onClick={handleThemeClick} />
 
         <Navbar />
 

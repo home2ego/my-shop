@@ -5,24 +5,39 @@
 :root {
   font-family: system-ui, sans-serif;
 
-  --white: #fff;
-  --black: #000;
   --primary: #213547;
+  --secondary: #fff;
+  --extra: #000;
   --neutral: #fafafa;
+
   --neutral-2: #94a3b8;
   --accent: #4f46e5;
   --accent-2: #a5b4fc;
   --accent-3: #e11d48;
   --accent-4: #fecdd3;
+
+  --surface-color: #fff;
+  --surface-shadow: #c4c4c4;
 }
 
 body {
   position: relative;
 
   background-color: var(--neutral);
+  color: var(--extra);
   margin: 0;
 
   height: 100vh;
+}
+
+body.dark {
+  --primary: #fafafa;
+  --secondary: #000;
+  --extra: #fff;
+  --neutral: #222;
+
+  --surface-color: #444;
+  --surface-shadow: #222;
 }
 
 h1 {
@@ -67,7 +82,7 @@ input {
 
 /* #region NAVBAR */
 .navbar {
-  background-color: var(--white);
+  background-color: var(--surface-color);
   padding: 10px 30px;
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07), 0px -3px 7px 1px rgba(0, 0, 0, 0.07);
   display: flex;
@@ -155,10 +170,11 @@ input {
   display: inline-block;
   cursor: pointer;
   font-weight: 600;
+  border: 0;
 }
 
 .btn-accent {
-  color: var(--white);
+  color: #fff;
   background-color: var(--accent);
   min-width: 140px;
 
@@ -177,11 +193,11 @@ input {
 }
 
 .btn-outline {
-  color: var(--black);
+  color: #000;
   background-color: var(--accent-2);
   border: var(--accent) 2px solid;
 
-  box-shadow: 1px 1px 7px #c4c4c4;
+  box-shadow: 1px 1px 7px var(--surface-shadow);
   padding: 8px 24px;
   border-radius: 10px;
 
@@ -191,11 +207,11 @@ input {
 }
 
 .btn-delete {
-  color: var(--black);
+  color: #000;
   background-color: var(--accent-4);
   border: 2px solid var(--accent-3);
 
-  box-shadow: 1px 1px 7px #c4c4c4;
+  box-shadow: 1px 1px 7px var(--surface-shadow);
   padding: 5px 10px;
   border-radius: 10px;
 
@@ -215,9 +231,9 @@ input {
   padding: 4px;
   border-radius: 50%;
 
-  background-color: var(--white);
+  background-color: var(--surface-color);
   border: var(--primary) 2px solid;
-  box-shadow: 1px 1px 7px #c4c4c4;
+  box-shadow: 1px 1px 7px var(--surface-shadow);
 
   background-image: url(./assets/moon.svg);
   background-repeat: no-repeat;
@@ -259,7 +275,7 @@ input {
   font-weight: 700;
   font-size: initial;
   padding-bottom: 10px;
-  color: var(--black);
+  color: var(--extra);
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -281,7 +297,7 @@ input {
 }
 
 .product {
-  background-color: var(--white);
+  background-color: var(--surface-color);
   padding: 15px 20px;
   border-radius: 25px;
   display: grid;
@@ -306,14 +322,14 @@ input {
   position: absolute;
   top: 8px;
   right: -15px;
-  background-color: var(--white);
+  background-color: var(--surface-color);
   border-radius: 50%;
   padding: 5px;
 }
 
 .product-quantity {
   background-color: var(--accent);
-  color: var(--white);
+  color: #fff;
   border-radius: 50%;
   font-size: 14px;
   font-weight: 600;
@@ -344,7 +360,7 @@ input {
 
 /* #region Product details page */
 .product-details-image {
-  background-color: var(--white);
+  background-color: var(--surface-color);
   padding: 10px;
   border-radius: 20px;
 }
@@ -356,8 +372,8 @@ input {
 
 .table thead {
   background-color: var(--primary);
-  color: var(--white);
-  border: 1px solid var(--white);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
   border-top: 0;
 }
 
@@ -370,14 +386,14 @@ input {
 
 .table tbody {
   font-size: initial;
-  border: 1px solid var(--white);
+  border: 1px solid var(--secondary);
 }
 
 .table-nutrition tbody td:last-child {
   text-align: center;
 }
 .table tbody tr:nth-child(2n) {
-  background-color: var(--white);
+  background-color: var(--secondary);
 }
 .table tbody tr:nth-child(2n + 1) {
   background-color: var(--neutral);
@@ -403,7 +419,7 @@ input {
 
 .cart-highlight {
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--secondary);
 }
 /* #endregion Products details page */
 
@@ -430,7 +446,8 @@ input {
   border: none;
   border-left: 5px solid var(--neutral-2);
   transition: border-left-color 160ms;
-  background-color: white;
+  background-color: var(--surface-color);
+  color: var(--extra);
 }
 
 ::placeholder {
