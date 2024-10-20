@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Input from './Input.jsx';
 import Button from './Button.jsx';
+import { AppContext } from './AppContext.jsx';
 
-function Cart({ cart }) {
+function Cart() {
   const [email, setEmail] = useState('');
 
-  const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+  const app = useContext(AppContext);
+
+  const cart = app.cart;
+  const totalPrice = app.getTotalPrice();
 
   return (
     <div className="cart-layout">

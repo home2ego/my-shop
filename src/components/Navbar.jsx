@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AppContext } from './AppContext.jsx';
 
-function Navbar({ cart }) {
-  const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
+function Navbar() {
+  const app = useContext(AppContext);
+
+  const cartCount = app.getCartCount();
 
   return (
     <nav className="navbar">

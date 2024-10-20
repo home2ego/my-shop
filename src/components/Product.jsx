@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button.jsx';
+import { AppContext } from './AppContext.jsx';
 
 function Product(props) {
-  const { onProductDelete, onProductAdd, cart, details } = props;
+  const { details } = props;
   const { image, name, description, price, id } = details;
 
-  const productFromCart = cart.find((product) => product.id === id);
+  const app = useContext(AppContext);
+  const productFromCart = app.getProductFromCart(id);
+
   const quantity = productFromCart ? productFromCart.quantity : 0;
 
   return (
@@ -27,12 +31,12 @@ function Product(props) {
       <div className="product-checkout">
         <div>
           {quantity > 0 && (
-            <Button outline onClick={() => onProductDelete(id)} className="product-delete">
+            <Button outline onClick={() => app.onProductDelete(id)} className="product-delete">
               x
             </Button>
           )}
         </div>
-        <Button outline onClick={() => onProductAdd(details)}>
+        <Button outline onClick={() => app.onProductAdd(details)}>
           ${price}
         </Button>
       </div>
