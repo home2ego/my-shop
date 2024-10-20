@@ -1,8 +1,6 @@
 import clsx from 'clsx';
 
-function Button(props) {
-  const { children, outline, className, ...rest } = props;
-
+function Button({ children, outline, className, ...rest }) {
   const classNames = clsx(
     {
       btn: true,

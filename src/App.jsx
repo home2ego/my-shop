@@ -19,6 +19,11 @@ function App() {
     }
   }, [cart]);
 
+  const handleProductDelete = (id) => {
+    const updatedCart = cart.filter((product) => product.id !== id);
+    setCart(updatedCart);
+  };
+
   const handleProductAdd = (newProduct) => {
     // check if item exists
     const existingProduct = cart.find((product) => product.id === newProduct.id);
@@ -46,11 +51,6 @@ function App() {
         },
       ]);
     }
-  };
-
-  const handleProductDelete = (id) => {
-    const updatedCart = cart.filter((product) => product.id !== id);
-    setCart(updatedCart);
   };
 
   return (
