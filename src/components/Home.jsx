@@ -14,7 +14,7 @@ function Home() {
         </Link>
       </div>
       <img
-        src="/src/assets/home-my-shop.webp"
+        src="./assets/home-my-shop.webp"
         width="350"
         height="241"
         className="rounded"

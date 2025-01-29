@@ -12,7 +12,7 @@ function About() {
         </p>
       </div>
       <img
-        src="/src/assets/about-my-shop.webp"
+        src="./assets/about-my-shop.webp"
         height="275"
         width="183"
         className="rounded"
