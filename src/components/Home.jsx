@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import homeShop from '../assets/home-my-shop.webp';
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
         </Link>
       </div>
       <img
-        src="./assets/home-my-shop.webp"
+        src={homeShop}
         width="350"
         height="241"
         className="rounded"

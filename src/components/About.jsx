@@ -1,3 +1,5 @@
+import aboutShop from '../assets/about-my-shop.webp';
+
 function About() {
   return (
     <div className="about-layout">
@@ -12,7 +14,7 @@ function About() {
         </p>
       </div>
       <img
-        src="./assets/about-my-shop.webp"
+        src={aboutShop}
         height="275"
         width="183"
         className="rounded"
