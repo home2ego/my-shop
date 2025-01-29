@@ -1,11 +1,14 @@
-# MyShop
+# MyShop grocery app
 
-**MyShop** is a web application that offers users product browsing, and shopping cart management, all within a highly responsive and interactive user interface.
+**MyShop** is a grocery application that offers users product browsing, and shopping cart management, all within a highly responsive and interactive user interface.
+
+### [MyShop Preview](https://my-shop-web.pages.dev/)
 
 ## Technologies Used
 
-- **React**: For building a dynamic and component-based user interface, allowing fast rendering and efficient updates across the application.
-
-- **React Router**: For enabling smooth navigation between different pages, ensuring a seamless and intuitive browsing experience without reloading the entire app.
-
-- **Redux**: For managing the global state of the application, ensuring consistent data flow and easy state management across components.
+- React.js
+- React Router(v6)
+- JS
+- Fetch, REST API
+- CSS
+- useSWR
