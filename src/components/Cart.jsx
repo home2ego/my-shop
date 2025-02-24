@@ -15,7 +15,9 @@ function Cart() {
     <div className="cart-layout">
       <div>
         <h1>Your Cart</h1>
-        {cart.length === 0 && <p>You have not added any product to your cart yet.</p>}
+        {cart.length === 0 && (
+          <p>You have not added any product to your cart yet.</p>
+        )}
         {cart.length > 0 && (
           <>
             <table className="table table-cart">
@@ -24,7 +26,7 @@ function Cart() {
                   <th width="25%" className="th-product">
                     Product
                   </th>
-                  <th width="20%">Unit price</th>
+                  <th width="20%">Price</th>
                   <th width="10%">Quantity</th>
                   <th width="25%">Total</th>
                 </tr>
@@ -34,7 +36,12 @@ function Cart() {
                   return (
                     <tr key={product.id}>
                       <td>
-                        <img src={product.image} width="30" height="30" alt="" /> {product.name}
+                        <img
+                          src={product.image}
+                          width="30"
+                          height="30"
+                          alt=""
+                        />
                       </td>
                       <td>${product.price}</td>
                       <td>{product.quantity}</td>
@@ -55,7 +62,10 @@ function Cart() {
             </table>
 
             <form className="pay-form">
-              <p>Enter your email and then click on pay and your products will be delivered to you on the same day!</p>
+              <p>
+                Enter your email and then click on pay and your products will be
+                delivered to you on the same day!
+              </p>
               <Input
                 placeholder="Email"
                 onChange={(event) => setEmail(event.target.value)}

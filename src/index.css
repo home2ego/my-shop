@@ -71,6 +71,8 @@ input {
 }
 
 .rounded {
+  max-width: 100%;
+  height: auto;
   border-radius: 30px;
 }
 
@@ -84,7 +86,8 @@ input {
 .navbar {
   background-color: var(--surface-color);
   padding: 10px 30px;
-  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07), 0px -3px 7px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+    0px -3px 7px 1px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -198,8 +201,9 @@ input {
   border: var(--accent) 2px solid;
 
   box-shadow: 1px 1px 7px var(--surface-shadow);
-  padding: 8px 24px;
+  padding-block: 8px;
   border-radius: 10px;
+  width: 75px;
 
   font-size: 14px;
 
@@ -222,6 +226,7 @@ input {
 
 .btn-toggle {
   position: fixed;
+  z-index: 1;
   bottom: 15px;
   right: 30px;
 
@@ -301,20 +306,31 @@ input {
 
 .product {
   background-color: var(--surface-color);
-  padding: 15px 20px;
+  padding: 20px 15px;
   border-radius: 25px;
   display: grid;
   grid-template-columns: auto 1fr auto;
+
+  position: relative;
+}
+
+.product .btn-delete,
+.product .btn-outline {
+  position: absolute;
+}
+
+.product .btn-delete {
+  top: 10px;
+  right: 10px;
+}
+
+.product .btn-outline {
+  bottom: 10px;
+  right: 10px;
 }
 
 .product-info {
-  padding-left: 25px;
-}
-
-.product-checkout {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  justify-items: end;
+  padding-left: 20px;
 }
 
 .product-image-container {
@@ -381,10 +397,10 @@ input {
 }
 
 .table th {
-  padding: 15px;
+  padding: 12px;
 }
 .table td {
-  padding: 10px;
+  padding: 12px;
 }
 
 .table tbody {
@@ -409,10 +425,7 @@ input {
   text-align: center;
 }
 .table-cart tbody td:first-child {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-left: 20px;
+  text-align: left;
 }
 
 .th-product {
@@ -474,6 +487,13 @@ input:focus {
 /* #endregion FORM */
 
 @media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar ul {
+    padding-left: 0;
+  }
+
   .home-layout,
   .about-layout,
   .products-grid,
@@ -482,6 +502,20 @@ input:focus {
   }
   .home-layout img {
     order: -1;
+  }
+
+  .table-cart thead th:not(:last-child) {
+    padding-right: 0;
+  }
+  .table-cart thead th:last-child {
+    padding-left: 0;
+  }
+
+  .table-cart tbody td:not(:last-child) {
+    padding-right: 0;
+  }
+  .table-cart tbody td:last-child {
+    padding-left: 0;
   }
 }
 
