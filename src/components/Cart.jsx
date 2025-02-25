@@ -40,7 +40,7 @@ function Cart() {
                           src={product.image}
                           width="30"
                           height="30"
-                          alt=""
+                          alt={product.name}
                         />
                       </td>
                       <td>${product.price}</td>
