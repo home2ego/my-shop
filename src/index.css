@@ -227,8 +227,8 @@ input {
 .btn-toggle {
   position: fixed;
   z-index: 1;
-  bottom: 15px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
 
   width: 60px;
   height: 60px;
@@ -502,6 +502,12 @@ input:focus {
   }
   .home-layout img {
     order: -1;
+  }
+  .products-layout {
+    padding-bottom: 100px;
+  }
+  .products-layout small {
+    bottom: 60px;
   }
 
   .table-cart thead th:not(:last-child) {
